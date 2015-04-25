@@ -3,9 +3,6 @@ title : "Codebook averages weareable computing data"
 author: "Henk van de Ridder"
 date  : "25-04-2015"
 ---
-remarks: template used from: http://datasciencespecialization.github.io/getclean/ 
-         https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41
----
 
 ## Project Description
 Analysing wearable computing data
@@ -19,13 +16,13 @@ The raw data is gathered from the Human Activity Recognition Using SmartPhones
 ## Preprogram steps
 - First download the information into a file: "getdata-projectfiles-UCI HAR Dataset.zip"
 - Extract the zip file to a sub folder: "UCI_HAR_Datase" of the working directory
-- The main folder has files with activity labels and measurement variables (called features)
+- The main folder has files with activity labels "activity\_labels.txt" and measurement variables (called features) "features.txt".
 - There are two folders with datasets: test and train
 - Each dataset consists of measurements (X_), subjects (subject_test) and (determined) activities (y_test.txt)
 
 
-## Cleaning steps (done with programm run_analisys.R)
-The tidy datafile has been created in the following steps
+## Cleaning steps (done with programm run_analysis.R)
+The tidy datafile has been created with the following steps
 - 1) Merging the training and the test sets to create one data set consisting of
      subject-numbers (1-30), activity-numbers(1-6) and 561 measurements 
 - 2) Extracting only the measurements on the mean and standard deviation for each measurement. 
@@ -124,30 +121,32 @@ The activity has six values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITT
 ###Notes on other variables:
 Each variable is an average value of either mean or std of the measurements
 
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAccXYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAccXYZ and tGravityAccXYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-These signals were used to estimate variables of the feature vector for each pattern:  
-'X/Y/Z' is used to denote 3-axial signals in the X, Y and Z directions.
+These signals were used to estimate variables of the feature vector for each pattern: 'X/Y/Z' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAccX/Y/Z
-tGravityAccX/Y/Z
-tBodyAccJerkX/Y/Z
-tBodyGyroX/Y/Z
-tBodyGyroJerkX/Y/Z
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAccX/Y/Z
-fBodyAccJerkX/Y/Z
-fBodyGyroX/Y/Z
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+Timebased Variables:
+- tBodyAccX/Y/Z
+- tGravityAccX/Y/Z
+- tBodyAccJerkX/Y/Z
+- tBodyGyroX/Y/Z
+- tBodyGyroJerkX/Y/Z
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+
+Fast Fourier Variables
+- fBodyAccX/Y/Z
+- fBodyAccJerkX/Y/Z
+- fBodyGyroX/Y/Z
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
 
